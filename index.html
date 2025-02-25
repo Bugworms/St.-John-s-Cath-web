@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. John's Cathedral | Welcome</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans text-gray-800">
+    <header class="sticky top-0 bg-beige z-10 shadow">
+        <nav class="container mx-auto p-4 flex justify-between items-center">
+            <div class="text-2xl font-serif text-green">St. John's Cathedral</div>
+            <ul class="flex gap-6">
+                <li><a href="#home" class="text-green hover:text-gold">Home</a></li>
+                <li><a href="about.html" class="text-green hover:text-gold">About</a></li>
+                <li><a href="events.html" class="text-green hover:text-gold">Events</a></li>
+                <li><a href="visit.html" class="text-green hover:text-gold">Visit Us</a></li>
+                <li><a href="connect.html" class="text-green hover:text-gold">Connect</a></li>
+            </ul>
+            <button id="lang-toggle" class="text-sm text-green">中文</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="relative">
+            <video autoplay muted loop class="w-full h-97 object-cover">
+                <source src="Videos/cathedral-video.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
+                <h1 class="text-4xl md:text-5xl font-serif text-shadow">Welcome to St. John’s</h1>
+                <p class="text-lg md:text-xl text-shadow">Worship, History, Community Since 1849</p>
+                <a href="events.html" class="mt-4 px-6 py-2 bg-green text-white rounded hover:bg-gold">Explore Events</a>
+            </div>
+        </section>
+
+        <section id="quick-links" class="container mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-beige p-4 rounded text-center"><h2 class="text-xl font-serif text-green">Services</h2><p>Sundays at 8 AM & 10:30 AM</p></div>
+            <div class="bg-beige p-4 rounded text-center"><h2 class="text-xl font-serif text-green">Events</h2><p>Join our community</p></div>
+            <div class="bg-beige p-4 rounded text-center"><h2 class="text-xl font-serif text-green">Visit</h2><p>4 Garden Road, Central</p></div>
+        </section>
+    </main>
+
+    <footer class="bg-green text-white text-center p-4">
+        <p>info@stjohnscathedral.org.hk | © 2025 St. John’s Cathedral</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

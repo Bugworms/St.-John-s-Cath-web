@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | St. John's Cathedral</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans text-gray-800">
+    <!-- Same header as index.html -->
+    <main>
+        <section class="container mx-auto p-6 flex flex-col md:flex-row gap-6">
+            <div class="md:w-1/2">
+                <h1 class="text-3xl font-serif text-green mb-4">Our History</h1>
+                <ul class="timeline">
+                    <li>1849: Cathedral founded as Hong Kong’s first Anglican church.</li>
+                    <li>1941-45: Survived WWII occupation.</li>
+                    <li>1981: Declared a monument of Hong Kong.</li>
+                </ul>
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-xl font-serif text-green mb-4">Gallery</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="stained-glass.webp" alt="Stained Glass" class="gallery-img rounded" onclick="openLightbox(this)">
+                    <img src="service.webp" alt="Service" class="gallery-img rounded" onclick="openLightbox(this)">
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Same footer -->
+    <script src="script.js"></script>
+</body>
+</html>
