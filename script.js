@@ -21,3 +21,4 @@ function openLightbox(img) {
     lightbox.innerHTML = `<img src="${img.src}" alt="${img.alt}"><span onclick="this.parentElement.remove()">X</span>`;
     document.body.appendChild(lightbox);
 }
+ 

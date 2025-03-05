@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. John's Cathedral | Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz@0,6..96;1,6..96&family=Eagle+Lake&family=Estonia&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+  
+<style>
+*{  position: relative; margin: 0 0;}
+
+html{
+  overflow-x: hidden;
+}
+
+
+</style>
+
+
+<style>
+  *{margin: 0;}
+  
+  .overflow{height: 500vh;background-color:#D5F2FF;}
+  
+  /* 1.under video 2.after video, sticky on top under the header */
+  .hamburger-menu {
+    float: right;
+    margin-right: 14%;
+    display: flex;
+    z-index: 99999;
+    position: sticky;
+  
+    /*after previous header*/
+    top: 15px;
+    transition: top 1s, opacity .1s;
+  }
+  
+  .menu-hidden{opacity: 0; top: 50px;}
+  
+  @-webkit-keyframes spin  {100% {transform: rotate(360deg);}}
+  @-moz-keyframes spin  {100% {transform: rotate(360deg);}}
+  @keyframes spin  {100% {transform: rotate(360deg);}}
+  #SpinContainer { position:relative; }
+  
+  .star { 
+      position: relative;
+      float:right;
+      cursor: pointer;
+      padding: 1px;
+      width: 50px;
+      height: 50px;
+  }
+
+  .star img{width: 50px;}
+  
+  .star.spin { 
+      -moz-animation: spin  1s;
+      -webkit-animation: spin  1s;
+      animation: spin  1s;
+  }
+  
+  .menu-list {
+    white-space: nowrap;
+    display: flex;
+    position: absolute;
+    top: 128%;
+    right: 0;
+    border-bottom: 1px solid goldenrod;
+    border-top: 1px solid goldenrod;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    list-style-type: none;
+    background-color:beige;
+  
+    /* width can can be extend */
+    width: auto;
+    opacity: 0;
+    visibility: hidden;
+  
+    /* transition provide time to hover hidden items*/
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  
+  .menu-list li:nth-of-type(-n+10) {border-right: 1px solid goldenrod;}
+  
+  .menu-list li a {
+    display: block;
+    /* borderline & hover bg size control */
+    padding: 5px 0px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .menu-list li{align-content: center;position: relative;padding: 0px 20px;}
+  
+  .menu-list>li:hover>a{color: goldenrod;}
+  
+  .hamburger-menu:hover .menu-list { opacity: 1; visibility: visible;}
+  
+  .sub-menu {
+    padding: 0px;
+    position: absolute;
+    top: 120%; 
+  
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    list-style-type: none;
+    width: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    background-color: beige;
+  
+    /* align to main menu horizontally */
+    margin-left: -20px;
+  }
+  
+  /* last menu stick to the right*/
+  .last-sub-menu {right: 0;}
+  
+  .sub-menu li{border-left: 1px solid goldenrod;padding: 3px 10px;}
+  
+  .sub-menu li:first-child{border-top: 1px solid goldenrod;}
+  .sub-menu li:last-child {border-bottom: 1px solid goldenrod;}
+  
+  .sub-menu li:nth-of-type(odd) {background-color: rgb(237, 230, 195);}
+  
+  .menu-list li:hover > .sub-menu {opacity: 1; visibility: visible;}
+  .sub-menu li:hover{background-color: goldenrod;}
+  .sub-menu li a:hover{color: white;}
+  
+  </style>
+
+
+</head>
+
+
+<body>
+
+  <!-- header -->
+  <header class="topnav nowarp">
+    <nav class="ms-auto p-4 items-center flex gap-l">
+      <div class="feature-item--wrapper justify-left ">
+        <img src="images/StJohnCath_Logo.png" style="width: 70px" class="clickable" onclick="LinkHome()" title="Home">
+        <div class="logo text-gold">
+        <span class="bodoni text-grow" style="font-size: 20px;">St. John's Cathedral</span> <br>
+        <span class="notobold text-grow" style="font-size: 15px;letter-spacing: 2px;">聖公會聖約翰座堂</span> 
+        </div>
+      </div>
+          <ul class="hover-list flex gap-s">
+            <li class="Dioceselogo">
+              <img  src="images/ShengKung_Logo.png" width="40px" class="Dioceselogo" onclick="LinkSK()">
+              <div class="hiddentext">Hong Kong<br>Sheng Kung Hui</div>
+            </li>
+            <li class="Dioceselogo">
+              <img src="images/Island_logo.png" width="40px" class="Dioceselogo" onclick="LinkIS()">
+              <div class="hiddentext">Diocese of<br>Hong Kong Island</div>
+            </li>
+            <li class="Dioceselogo">
+              <img src="images/EastKowloon_Logo.png" width="40px" class="Dioceselogo" onclick="LinkEK()">
+              <div class="hiddentext">Diocese of<br>Eastern Kowloon</div>
+            </li>
+            <li class="Dioceselogo">
+              <img src="images/WestKowloon_Logo.png" width="40px" class="Dioceselogo" onclick="LinkWK()">
+              <div class="hiddentext">Diocese of<br>West Kowloon</div>
+            </li>
+            <li class="Dioceselogo ">
+              <img src="images/Macau_Logo.png" width="40px" class="Dioceselogo" onclick="LinkMM()">
+              <div class="hiddentext shortunderline">Missionary Area of<br>Macau</div>
+            </li>
+          </ul>
+          <button id="lang-toggle" class="notobold text-gold lagbutton clickable">中文</button>
+      </nav>
+
+  </header>
+
+  <!-- top video and text ontop -->
+  <div class="" >
+    <div class="divtopvideo">
+    <video autoplay muted loop class="topvideo"  >
+    <source src="Videos/cathedral-video.mp4" type="video/mp4">
+    </video></div>
+    <div class="topvideo-text">
+      <h1 class="text-shadow bodoni" style="font-size: 300%; color: #fff; line-height: 1;">Welcome to</h1>
+        <h1 class="text-shadow bodoni" style="font-size: 400%; color: #fff; ">Cathedral of St. John</h1>
+    </div>
+  </div>
+
+  <div>
+    <ul class="navigator spectral">
+        <li><a>St John's</a>
+          <ul class="sub-navigator" >
+            <li><a href="#">Brief<br>History</a></li>
+            <li><a href="#">A Historical<br>Tour</a></li>
+            <li><a href="#">Mission<br>Statement</a></li>
+            <li><a href="#">Cathedral<br>Council</a></li>
+            <li><a href="#">Cathedral<br>Clergy</a></li>
+            
+            <li><a href="#">Opening<br>Hours</a></li>
+            <li><a href="#">How To<br>Get there</a></li>
+            <li><a href="#">Cathedral &<br>Daughter Church</a></li>
+            <li><a href="#">Our Link with<br>Dicese of Toungoo</a></li>
+            <li><a href="#">In Partnership with<br>The Nest</a></li>
+          </ul>
+        </li>
+
+        <li><a>Music<br>Ministries</a>
+          <ul class="sub-navigator">
+            <li><a href="#">Music Staff</a></li>
+            <li><a href="#">Cathedral Choir</a></li>
+            <li><a href="#">Evening Choir</a></li>
+            <li><a href="#">Children's Choir</a></li>
+            <li><a href="#">Chinese Choir</a></li>
+            <li><a href="#">Lunchtime<br>Recitals</a></li>
+          </ul>
+        </li>
+
+        <li><a>Ourtreach<br>Ministries</a>
+          <ul class="sub-navigator">
+            <li><a href="#">St John's Cathedral<br>Counselling Service</a></li>
+            <li><a href="#">St John's Cathedral<br>LifeEnrichment Centre</a></li>
+            <li><a href="#">Mission For Migrant<br>Workers</a></li>
+            <li><a href="#">St John's Cathedral<br>Bookstore</a></li>
+          </ul>
+        </li>
+
+        <li><a>Pastoral<br>Care</a>
+          <ul class="sub-navigator" >
+            <li><a href="#">Baptisms</a></li>
+            <li><a href="#">Ministry to<br>the Sick</a></li>
+            <li><a href="#">Weddings at<br>St John’s</a></li>
+          </ul>
+        </li>
+
+        <li><a>Children's<br>Ministries</a>
+          <ul class="sub-navigator" >
+            <li><a href="#">Document<br>Download Area</a></li>
+          </ul>
+        </li>
+
+        <li><a>Chinese<br>Ministries</a>
+          <ul class="sub-navigator" >
+            <li><a href="#">Andrew<br>Fellowship</a></li>
+            <li><a href="#">Mandrain<br>Fellowship</a></li>
+            <li><a href="#">Monthly Young<br>Family Fellowship</a></li>
+            <li><a href="#">Bible Reading<br>Praying Fellowship</a></li>
+            <li><a href="#">Children's<br>group (P1-P4)</a></li>
+          </ul>
+        </li>
+
+        <li><a>Group &<br>Fellowships</a>
+          <ul class="sub-navigator" >
+            <li><a href="#">Faith Begins<br>Course</a></li>
+            <li><a href="#">AMONG<br>US</a></li>
+            <li><a href="#">Bible Reading<br>Fellowship</a></li>
+            <li><a href="#">Castaways<br>Chairty Shop</a></li>
+            <li><a href="#">CLEARS</a></li>
+            <li><a href="#">Education For<br>Ministry (EFM)</a></li>
+            <li><a href="#">Filipino<br>Fellowship</a></li>
+            <li><a href="#">St John's Parent and<br>Toddler Playgroup</a></li>
+          </ul>
+        </li>
+
+        <li><a>Donation</a>
+          <ul class="sub-navigator">
+            <li><a href="#">Stewardship</a></li>
+            <li><a href="#">Online<br>Donation</a></li>
+          </ul>
+        </li>
+
+        <li><a>Offer Our<br>Time & Talents</a>
+          <ul class="sub-navigator" >
+            <li><a href="#">Flower<br>Guild</a></li>
+            <li><a href="#">Servers</a></li>
+            <li><a href="#">Sidemen</a></li>
+            <li><a href="#">Michaelmas<br>Fair</a></li>
+            <li><a href="#">Pilgrimages</a></li>
+          </ul>
+        </li>
+
+        <li><a>Multimedia<br>Archive</a>
+          <ul class="sub-navigator" >
+            <li><a href="#">Sermon</a></li>
+            <li><a href="#">Pew<br>Bulletin</a></li>
+            <li><a href="#">In Touch</a></li>
+            <li><a href="#">Photo<br>Gallery</a></li>
+            <li><a href="#">Message of<br>Hope</a></li>
+          </ul>
+        </li>
+
+        <li><a>Useful<br>Info/Links</a>
+          <ul class="sub-navigator last-sub-navigator">
+            <li><a href="#">This Week's<br>Services</a></li>
+            <li><a href="#">Inclement Weather<br>Procedures</a></li>
+            <li><a href="#">Media &<br>Photography</a></li>
+            <li><a href="#">Personal Data<br>Privacy Statement</a></li>
+            <li><a href="#">HKSKH<br>Safeguarding Policy</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </li>
+    </ul>
+  </div>
+
+  <main class="wrapper">
+  <div class="text-sky">
+    <br>
+    <br>
+  Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo. Cras mattis consectetur purus sit amet fermentum.
+  </div>
+  </main>
+
+  <!-- hamburger menu -->
+  <div class="hamburger-menu menu-hidden spectral">
+    <div id="SpinContainer">
+        <img src="images/menu.png" style="width: 50px;" class="star">
+    </div>
+    <ul class="menu-list">
+        <li><a>St John's</a>
+          <ul class="sub-menu">
+            <li><a href="#">Brief History</a></li>
+            <li><a href="#">A Historical Tour</a></li>
+            <li><a href="#">Mission Statement</a></li>
+            <li><a href="#">Cathedral Council</a></li>
+            <li><a href="#">Cathedral Clergy</a></li>
+            <li><a href="#">Opening Hours</a></li>
+            <li><a href="#">How To Get there</a></li>
+            <li><a href="#">Cathedral & Daughter Ch</a></li>
+            <li><a href="#">Our Link with Dicese of Toungoo</a></li>
+            <li><a href="#">In Partnership with The Nest</a></li>
+          </ul>
+        </li>
+
+        <li><a>Music<br>Ministries</a>
+          <ul class="sub-menu">
+            <li><a href="#">Music Staff</a></li>
+            <li><a href="#">Cathedral Choir</a></li>
+            <li><a href="#">Evening Choir</a></li>
+            <li><a href="#">Children's Choir</a></li>
+            <li><a href="#">Chinese Choir</a></li>
+            <li><a href="#">Lunchtime Recitals</a></li>
+          </ul>
+        </li>
+
+        <li><a>Ourtreach<br>Ministries</a>
+          <ul class="sub-menu">
+            <li><a href="#">St john's Cathedral Counselling Service</a></li>
+            <li><a href="#">St john's Cathedral Life Enrichment Centre</a></li>
+            <li><a href="#">Mission For Migrant Workers</a></li>
+            <li><a href="#">St John's Cathedral Bookstore</a></li>
+          </ul>
+        </li>
+
+        <li><a>Pastoral<br>Care</a>
+          <ul class="sub-menu">
+            <li><a href="#">Baptisms</a></li>
+            <li><a href="#">Ministry to he Sick</a></li>
+            <li><a href="#">Weddings at St John’s</a></li>
+          </ul>
+        </li>
+
+        <li><a>Children's<br>Ministries</a>
+          <ul class="sub-menu">
+            <li><a href="#">Document Doenload Area</a></li>
+          </ul>
+        </li>
+
+        <li><a>Chinese<br>Ministries</a>
+          <ul class="sub-menu">
+            <li><a href="#">Andrew Fellowship</a></li>
+            <li><a href="#">Mandrain Fellowship</a></li>
+            <li><a href="#">Monthly Young Family Fellowship</a></li>
+            <li><a href="#">Bible Reading Praying Fellowship</a></li>
+            <li><a href="#">Children's group (P1-P4)</a></li>
+          </ul>
+        </li>
+
+        <li><a>Group &<br>Fellowships</a>
+          <ul class="sub-menu">
+            <li><a href="#">Faith Begins Course</a></li>
+            <li><a href="#">AMONG US</a></li>
+            <li><a href="#">Bible Reading Fellowship</a></li>
+            <li><a href="#">Castaways Chairty Shop</a></li>
+            <li><a href="#">CLEARS</a></li>
+            <li><a href="#">Education For Ministry (EFM)</a></li>
+            <li><a href="#">Filipino Fellowship</a></li>
+            <li><a href="#">St John's Parent and Toddler Playgroup</a></li>
+          </ul>
+        </li>
+
+        <li><a>Donation</a>
+          <ul class="sub-menu">
+            <li><a href="#">Stewardship</a></li>
+            <li><a href="#">Online Donation</a></li>
+          </ul>
+        </li>
+
+        <li><a>Offer Our<br>Time & Talents</a>
+          <ul class="sub-menu">
+            <li><a href="#">Flower Guild</a></li>
+            <li><a href="#">Servers</a></li>
+            <li><a href="#">Sidemen</a></li>
+            <li><a href="#">Michaelmas Fair</a></li>
+            <li><a href="#">Pilgrimages</a></li>
+          </ul>
+        </li>
+
+        <li><a>Multimedia<br>Archive</a>
+          <ul class="sub-menu">
+            <li><a href="#">Sermon</a></li>
+            <li><a href="#">Pew Bulletin</a></li>
+            <li><a href="#">In Touch</a></li>
+            <li><a href="#">Photo Gallery</a></li>
+            <li><a href="#">Message of Hope</a></li>
+          </ul>
+        </li>
+
+        <li><a>Useful<br>Info/Links</a>
+          <ul class="sub-menu last-sub-menu">
+            <li><a href="#">This Week's Services</a></li>
+            <li><a href="#">Inclement Weather Procedures</a></li>
+            <li><a href="#">Media & Photography</a></li>
+            <li><a href="#">Personal Data Privacy Statement</a></li>
+            <li><a href="#">HKSKH Safeguarding Policy</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </li>
+    </ul>
+  </div>
+
+  <section class="overflow"></section>
+
+  <script type="text/javascript">
+    function myGeeks() {
+        document.getElement('img').draggable = false;
+    }
+  </script>
+
+  <!-- header transition -->
+  <script>
+    // header transfrom after top video
+
+      
+  </script>
+
+  <!-- icon links -->
+  <script>
+    //links//
+   function LinkHome() {window.location.assign("Test2.html")}
+   function LinkSK() {window.open("https://www.hkskh.org/index.aspx?lang=1")}
+   function LinkIS() {window.open("https://dhk.hkskh.org/Home/EN")}
+   function LinkEK() {window.open("https://dek.hkskh.org/index.aspx?lang=1")}
+   function LinkWK() {window.open("https://dwk.hkskh.org/index.aspx?lang=1")}
+   function LinkMM() {window.open("https://mma.hkskh.org/index.aspx?lang=1")}
+  
+  </script>
+  
+  <!-- hamburger -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>       
+  <script >
+    const star = document.querySelector('.star');
+    const menuList = document.querySelector('.menu-list');
+          
+    star.addEventListener('click', () => {
+    menuList.classList.toggle('show');
+  });
+          
+    window.addEventListener('click', (event) => {
+      if (!event.target.closest('.hamburger-menu')) {
+        menuList.classList.remove('show');
+      }
+    });
+  
+    $(".star").bind("webkitAnimationEnd mozAnimationEnd animationEnd", function(){
+      $(this).removeClass("spin")  
+    })
+  
+    $(".star").hover(function(){
+      $(this).addClass("spin");        
+    })
+  
+  </script>
+
+<!-- scroll animation -->
+  <script>
+window.addEventListener("scroll",() => {
+  if (window.pageYOffset > 501) {
+      document.querySelector("header").classList.add("topnavCOL");
+      document.querySelector(".hamburger-menu").classList.remove("menu-hidden");
+      document.querySelector(".navigator").classList.add("navigator-hidden");
+    }else {
+      document.querySelector("header").classList.remove("topnavCOL");
+      document.querySelector(".hamburger-menu").classList.add("menu-hidden");
+      document.querySelector(".navigator").classList.remove("navigator-hidden");
+    }});
+
+    window.addEventListener("scroll",() => {
+      if (window.pageYOffset > 450) {
+        document.querySelector(".navigator").classList.add("navigator-hidden");
+      }else {
+        document.querySelector(".navigator").classList.remove("navigator-hidden");
+      }});
+  </script>
+</body>
+</html>

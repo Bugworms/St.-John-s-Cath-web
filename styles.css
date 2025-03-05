@@ -7,26 +7,339 @@
     font-family: 'Cardinal';
     src: url(Cardinal.ttf);
 }
+.cardinal { font-family: "Cardinal"}
+
 @font-face {
     font-family: 'CloisterBlack';
     src: url(CloisterBlack.ttf);
 }
+.cloblack { font-family: "CloisterBlack"}
+
 @font-face {
     font-family: 'Ruritania';
     src: url(Ruritania.ttf);
 }
+.ruta { font-family: "Ruritania"}
 
-body {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;
+
+
+google fonts
+.lora {font-family: 'Lora'}
+.noto {font-family: "Noto Serif TC"; font-weight:400}
+.notobold {font-family: "Noto Serif TC"; font-weight:600}
+.bodoni{font-family: "Bodoni Moda SC", serif; font-weight: 400; }
+.eagle-lake{font-family: "Eagle Lake", serif;font-weight: 400;}
+.estonia{font-family: "Estonia", cursive;font-weight: 400;}
+.spectral {font-family: "Spectral", serif;font-weight: 400;}
+.spectral-semibold {font-family: "Spectral", serif;font-weight: 600;}
+  
+
+
+.topnav {
+  margin: 0px ;
+  align-items: center;
+  position:sticky;
+  top: 0;
+  padding:3rem 18vw;
+  
+  background: linear-gradient(rgba(255,0,0,0), rgb(223, 187, 88)) 
+  bottom /
+  var(--navunderline-width, 70%) .1em
+  no-repeat;
+
+  /*to clickable after scrolling down:*/
+  z-index: 9999;
+
+  transition-delay: 1s;
+  transition: 1s;
 }
+
+.topnavCOL{
+    background-color: #740c2d;
+    padding:.5rem 18vw;
+    --navunderline-width: 100%;
+}
+
+.feature-item--wrapper {
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    justify-content: left;
+  }
+
+  .framemed1 {
+    border: 100px sloid black;
+    width: 60%;
+    height: 60%;
+    padding: 5px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    border-image: url(images/Frame1.png) 01% round;
+  }
+
+.frame1 {
+    border-style: solid;
+    border-color:  sloid black;
+    border-width: 30px;
+    width: flex;
+    border-image: url(images/Frame1.png) 10% repeat;
+}
+
+.frame2 {
+    border-style: solid;
+    border-color:  sloid black;
+    border-width: 30px;
+    width: flex;
+    border-image: url(images/Frame2.png) 10% round;
+}
+
+.center {
+ display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.topvideo {
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    z-index:-1;
+}
+
+
+.topvideo-text {
+    font-family: 'Lora';
+        position: fixed;
+
+        top: 320px;
+        left: 50%;
+        -webkit-transform: translate(-50%, 0px);
+        transform: translate(-50%, 0px);
+
+        text-align: center;  
+        z-index: -1;
+        white-space:nowrap;
+     }
+
+
+.wrapper{
+    top: 650px;
+    padding: 10px 30px;
+    background-color:#2b4e3b;
+    z-index: 1;}
+
+.menu{
+    display: flex;
+    padding:0;
+
+    text-align: center; 
+    width: 100%;
+    justify-content: space-between; 
+}
+
+.menu li{    
+    list-style-type: none;
+    display: table-cell;
+    white-space:nowrap;
+    border: 2px solid #ffe093; 
+    display:inline-block;
+    padding: auto 0px;
+}
+
+/*Diocese logo hover animation*/
+.hover-list{ 
+    cursor: pointer;
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hover-list li {
+    position: relative;
+    margin-right: -10px;
+  }
+
+.hover-list li:hover {
+    margin-right: 130px;
+    }
+    
+.hiddentext {    
+    position: absolute;
+    font-family: 'Lora';
+    line-height: 1.3;
+    color: #ffe093;
+    text-shadow: 0px 0px 4px rgba(255, 255, 168, 0.7);
+    text-align:left;
+    white-space:nowrap;
+    z-index: -1;
+    margin-top: -40px; /*negative margin-top prevent bottom padding, dkw*/
+    font-size: 15px;
+
+    left: 20px;
+    opacity: 0;
+    transition: opacity 0.3s, left 0.3s;
+
+    /* underline */
+    background: linear-gradient(currentColor 0 0) 
+    bottom left/
+    var(--underline-width, 0%) 0.05em
+    no-repeat;
+    text-decoration: none;
+    transition: background-size 1s;
+}
+ 
+.Dioceselogo:hover + .hiddentext {left: 45px;opacity: 1;--underline-width: 100%}      
+.Dioceselogo:hover + .shortunderline{--underline-width: 37%;}
+.Dioceselogo img{transition: transform 0.5s;}
+.Dioceselogo:hover img{
+    transform: scale(1.3,1.3);
+}
+
+
+.navigator {
+  z-index: 2;
+  white-space: nowrap;
+  display: flex;
+  position: absolute;
+  margin: 0;
+
+  left: 50%;
+  -webkit-transform: translate(-50%, 0px);
+  transform: translate(-50%, 0px);
+
+  padding: 15px 50px;
+  top: 450px;
+
+  background-color:rgba(45, 110, 89, 0.8);  
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 1);
+  width: fit-content;
+
+  border-radius: 50px;
+
+  opacity: 1;
+  visibility: show;
+  transition: 1s;
+}
+
+.navigator-hidden{opacity: 0; top: 700px;z-index: -1;}
+
+.navigator>li {
+    cursor: pointer;
+    align-content: center;
+    position: relative;
+    padding: 0px 20px;
+}
+
+.navigator>li>a{letter-spacing: 1px;line-height: 1.5;}
+
+/* .navigator>li:hover{
+    background-color: rgba(255, 237, 136, 0.5);
+    box-shadow: 0 0px 10px rgb(255, 255, 234); 
+} */
+.navigator>li:hover>a{
+    text-shadow: 0px 1px 5px rgb(255, 255, 255)
+}
+
+.navigator>li:nth-of-type(-n+10) {border-right: 1px solid #d4a017;}
+
+
+.navigator li a {
+  padding: 5px 0px;
+  display: block;
+  text-decoration: none;
+  color: beige;
+  font-size: 1.1em;
+}
+
+.sub-navigator {
+    cursor:default;
+    position: fixed;
+
+    top: 155%;   
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-wrap: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1;
+
+    background-image: url(images/headerBG.jpg);
+    background-color: rgb(130, 113, 81);
+    background-blend-mode: multiply;
+    width: 100%;
+}
+
+.sub-navigator li{
+    padding: 20px 5px 20px 5px;
+    text-align: left;
+    align-content: center;
+    margin: 0 auto;
+
+}
+
+.sub-navigator li a{
+    cursor: pointer;
+    color: #faf2bc;
+    padding: 5px 20px;
+    align-content: center;
+    text-align: left;
+    line-height: 1.3;
+}
+
+/* .sub-navigator li a:before {
+    content: "᛭";
+    padding-right: 10px;
+    list-style: outside;
+  } */
+  
+.navigator> li:hover > .sub-navigator {opacity: 1; visibility: visible; transform: translateY(0) translateX(-50%, 50%);}
+
+.sub-navigator li:hover a{text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.5);}
+.sub-navigator li:hover{background: linear-gradient(rgba(0, 0, 0, 0), rgb(255, 251, 222
+    ,.3)) ;}
+
+
+.overflow{top: 600px;height: 100vh;background-color:#D5F2FF;}
+.nowarp{white-space:nowrap;}
+.gap-l{gap: 30px;}
+.gap-s{gap: 15px}
+.clickable{cursor: pointer}
+.overflow-hidden{overflow: hidden;}
+.items-center{align-items:center}
+.flex {display:flex}
+ul{list-style:none;margin:0;padding:0}
+.text-xl{font-size:1.25rem;line-height:1.75rem}
+.text-3xl{font-size:1.875rem;line-height:2.25rem}
+ 
+
+
+.lagbutton {margin-left: auto; border: 2px inset rgba(142, 142, 142, 0.4);background-color: rgba(0, 0, 0, 0.2);padding: 5px 20px;}
+.lagbutton:hover {background-color: rgba(0, 0, 0, 0.5)}
+
+.text-purple {color: #8754d5}
 
 .text-green { color: #2b4e3b; }
 .bg-green { background-color: #2b4e3b; }
-.text-gold { color: #d4a017; }
+
+.text-gold { color: #faf2bc; }
 .bg-gold { background-color: #d4a017; }
-.bg-beige { background-color: #f5f1e9; }
+
+.bg-sky { background-color: #D5F2FF; }
+.text-sky { color: #D5F2FF; }
+
+.text-wine { color: #740c2d; }
+.bg-wine { background-color: #740c2d; }
+
 .text-shadow { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); }
+.text-grow{ text-shadow: 0px 0px 5px rgba(255, 253, 115, .5)}
 .font-serif { font-family: 'Lora', serif; }
 
 .gallery-img { cursor: pointer; }
@@ -43,3 +356,4 @@ body {
 }
 .lightbox img { max-width: 90%; max-height: 90%; }
 .lightbox span { position: absolute; top: 10px; right: 20px; color: white; cursor: pointer; font-size: 1.5rem; }
+.left {align-self: flex-end;}
